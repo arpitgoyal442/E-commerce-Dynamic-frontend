@@ -1,0 +1,9 @@
+.single_banner{
+
+    display: flex !important;
+    flex-direction: row;
+    height: 380px;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}

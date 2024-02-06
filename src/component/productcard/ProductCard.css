@@ -1,0 +1,30 @@
+.product_card{
+    width: 220px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+  
+    /* border: 2px solid black; */
+
+}
+
+.product_card_info{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: #F8F9FA; */
+    padding: 0px 5px;
+}
+
+
+.product_card img{
+
+    width: 100%;
+    height: auto;
+    
+
+}
+

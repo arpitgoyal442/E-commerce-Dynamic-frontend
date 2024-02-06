@@ -1,0 +1,16 @@
+
+
+.admin{
+    display: flex;
+    flex-direction: row;
+}
+
+.admin_right{
+
+    width: 90vw;
+    height: 700px;
+    padding-top: 50px;
+    margin-left: 10vw;
+    
+    /* background-color: bisque; */
+}

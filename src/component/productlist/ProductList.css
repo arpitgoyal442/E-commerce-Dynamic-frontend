@@ -1,0 +1,42 @@
+
+.product_list-main{
+    margin-top: 60px;
+    margin-bottom: 100px;
+ 
+}
+
+.product_list-main-header{
+
+    width: 80vw;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.product_list_viewall:hover{
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+/* .product_list-main .subheading{
+    margin-left: 14vw;
+} */
+.product_list{
+
+    width: 80vw;
+
+    
+
+
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    justify-content: space-between
+
+
+}

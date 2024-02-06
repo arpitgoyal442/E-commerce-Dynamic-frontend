@@ -1,0 +1,48 @@
+.sidebar{
+
+
+    width: 10vw;
+    height: 30vw;
+    border-right: 1px solid grey;
+    padding-top: 50px;
+
+    position: fixed;
+   
+
+}
+
+.sidebar_icon{
+
+    width: auto;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.sidebar_items li{
+
+    list-style-type: none;
+}
+
+.sidebar_items li:hover{
+    cursor: pointer;
+}
+
+
+
+.sidebar_items li div{
+
+    padding-left: 10px;
+   
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.sidebar_items div h3{
+
+    font-size: 14px;
+}
+
