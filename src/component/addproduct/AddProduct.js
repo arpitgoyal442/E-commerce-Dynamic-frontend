@@ -50,19 +50,19 @@ const AddProduct=()=>{
             </div>
 
             <div className="add_product_form_field">
-            <label htmlFor="">Description</label>
+            <label htmlFor="">Sale(Percentage)</label>
             <input type="text" />
             </div>
 
-            <div className="add_product_form_field">
+            {/* <div className="add_product_form_field">
             <label htmlFor="">Description</label>
             <input type="text" />
-            </div>
+            </div> */}
 
-            <div className="add_product_form_field">
+            {/* <div className="add_product_form_field">
             <label htmlFor="">Description</label>
             <input type="text" />
-            </div>
+            </div> */}
 
             <div className="add_product_form_field">
             <label htmlFor="">Images</label>
