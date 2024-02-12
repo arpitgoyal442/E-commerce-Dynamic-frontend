@@ -10,19 +10,11 @@ const AdminProducts=()=>{
 
 
     return (
-
         <div className="admin_products">
-
-
             <div className="admin_products_header">
-
                 <h2>Products</h2>
-
                 <input type="text" placeholder="Search Product" />
             </div>
-
-
-
              {/* <h3>Watches</h3> */}
             <div className="admin_products_list">
 
@@ -76,30 +68,8 @@ const AdminProducts=()=>{
             
             </div>
 
-            {/* <div className="admin_products_product">
-            <ProductCard/>
-
-            <div className="edit_del_btn">
-
-                <img  src={EditIcon} alt="" />
-                <img src={deleteIcon} alt="" />
-              
             </div>
-            
-            </div> */}
-
-          
-
-         
-           
-            </div>
-
-
-
-
         </div>
-
-
     )
 
 }

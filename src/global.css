@@ -93,7 +93,7 @@
 
 
 
-.slick-next:before{
+/* .slick-next:before{
 
   content: '>';
   font-size: 50px;
@@ -112,7 +112,7 @@
   border: 0px;
   line-height: normal;
   font-family: 'Courier New', Courier, monospace;
-}
+} */
 
 .ml-5{
   margin-left: 5vw;
@@ -132,6 +132,12 @@
   border-radius: 5px;
 
 }
+
+
+.slick-next{
+  right: 350px;
+}
+
 
 
 

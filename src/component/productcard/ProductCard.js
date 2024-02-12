@@ -1,14 +1,17 @@
 import "./ProductCard.css"
 
 import bannerImage from "../../assets/images/banner-image.png"
+import { useNavigate } from "react-router-dom"
 
 
 const ProductCard=()=>{
 
+    const navigate=useNavigate();
+
 
     return (
 
-        <div className="product_card">
+        <div className="product_card" onClick={ ()=>navigate("/product/123")}>
 
             <img src={bannerImage} alt="" />
             <div className="product_card_info">

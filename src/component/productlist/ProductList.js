@@ -1,11 +1,14 @@
 
 
+import { useNavigate } from "react-router-dom"
 import ProductCard from "../productcard/ProductCard"
 import "./ProductList.css"
 
 
 
 const ProductList=()=>{
+
+    const navigate=useNavigate();
 
     return (
 
@@ -14,7 +17,7 @@ const ProductList=()=>{
             <div className="product_list-main-header">
 
          <p className='subheading'>Our Products</p>
-         <p className="product_list_viewall">View all</p></div>
+         <p className="product_list_viewall" onClick={()=>navigate("/products")}>View all</p></div>
         <div className="product_list">
            
             

@@ -5,26 +5,27 @@
     flex-direction: column;
     margin: 20px;
 
-  
-    /* border: 2px solid black; */
+}
 
+.product_card_info p{
+    margin: 0px;
 }
 
 .product_card_info{
+    margin-top: 20px;
     height: fit-content;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* background-color: #F8F9FA; */
-    padding: 0px 5px;
+    flex-direction: column;
+   
+}
+
+.product_card_rate{
+    color:chocolate
 }
 
 
 .product_card img{
-
     width: 100%;
     height: auto;
-    
-
 }
 

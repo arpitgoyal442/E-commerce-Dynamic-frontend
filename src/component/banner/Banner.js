@@ -15,28 +15,6 @@ import "../../global.css"
 import "./Banner.css"
 
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", backgroundColor: "black", right: "-150px", border: "2px solid black" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-
-    <div
-      className={className}
-      style={{ ...style, color: "red", display: "block", backgroundColor: "black", left: "10px", border: "2px solid black" }}
-      onClick={onClick}
-    />
-  );
-}
 
 function Banner() {
 
@@ -54,16 +32,6 @@ function Banner() {
     cssEase: "linear"
   };
 
-
-  // const settings = {
-  //     dots: true,
-  //     infinite: true,
-  //     speed: 500,
-  //     slidesToShow: 1,
-  //     slidesToScroll: 1,
-  //     nextArrow: <SampleNextArrow/>,
-  //     prevArrow: <SamplePrevArrow />,
-  //   };
 
   return (
 
