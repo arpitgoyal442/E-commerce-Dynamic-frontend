@@ -43,6 +43,7 @@
 
     flex: 0.6;
     padding-left: 50px;
+    font-family: auto;
     /* background-color: rgb(248, 251, 253) ; */
     /* background-color: brown;
      */
@@ -95,3 +96,9 @@
     cursor: pointer;
 }
 
+
+.product_info_item{
+    width: 70vw;
+    margin-left: 15%;
+    font-family: auto;
+}
