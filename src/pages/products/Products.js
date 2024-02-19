@@ -14,7 +14,13 @@ const Products=()=>{
 
                 <div  className="products_main_left_filter_item">
                     <label htmlFor="">Product Type</label>
-                    <input type="text" />
+                    {/* <input type="text" /> */}
+                    <select name="" id="">
+
+                        <option value="">Furniture</option>
+                        <option value="">Clothes</option>
+
+                    </select>
                 </div>
 
                 <div className="products_main_left_pricerange products_main_left_filter_item">
