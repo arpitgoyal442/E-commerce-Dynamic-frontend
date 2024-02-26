@@ -26,6 +26,8 @@
 
 .product_card img{
     width: 100%;
+    min-height: 230px;
+    object-fit: contain;
     height: auto;
 }
 

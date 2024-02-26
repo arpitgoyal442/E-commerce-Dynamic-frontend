@@ -1,10 +1,40 @@
+import axios from "axios";
 import Navbar from "../../component/navbar/Navbar";
 import ProductCard from "../../component/productcard/ProductCard";
 
 import "./Products.css"
+import { useEffect, useState } from "react";
+
+
+const backendURL=process.env.REACT_APP_BACKEND;
 
 
 const Products=()=>{
+
+    const [items,setItems]=useState([]);
+
+
+
+    const fetchProducts=async()=>{
+
+        try{
+
+        let res=await axios.get(`${backendURL}product`)
+
+        let items=res.data;
+         setItems(items)
+        }catch(e){
+            console.log("Error While Fetching Products: ",e);
+            throw new Error(e)
+        }
+
+    }
+
+
+    useEffect(()=>{
+        fetchProducts();
+    },[])
+
     return (
 
         <div className="products">
@@ -49,14 +79,17 @@ const Products=()=>{
                 <h2>Products</h2>
                 <div className="products_main_right_products">
 
-                 <div className="">
-                <ProductCard/>
-                </div>
+                
+                {items.map((item)=>{
+
+                    return  <ProductCard item={item}/>
+                })}
+
                
+                {/* <ProductCard/>
                 <ProductCard/>
                 <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+                <ProductCard/> */}
                 </div>
             </div>
 
