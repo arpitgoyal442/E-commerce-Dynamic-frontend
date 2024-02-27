@@ -24,8 +24,6 @@ const ImageCrousel=({allImages})=>{
     }
 
     const handlePre=()=>{
-
-
         let preVal=0;
 
         console.log("Show is ",show)
