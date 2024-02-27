@@ -5,22 +5,15 @@ import ProductCard from "../../component/productcard/ProductCard";
 import "./Products.css"
 import { useEffect, useState } from "react";
 
-
 const backendURL=process.env.REACT_APP_BACKEND;
-
 
 const Products=()=>{
 
     const [items,setItems]=useState([]);
-
-
-
     const fetchProducts=async()=>{
 
         try{
-
         let res=await axios.get(`${backendURL}product`)
-
         let items=res.data;
          setItems(items)
         }catch(e){
@@ -29,8 +22,6 @@ const Products=()=>{
         }
 
     }
-
-
     useEffect(()=>{
         fetchProducts();
     },[])

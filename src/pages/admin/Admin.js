@@ -13,10 +13,7 @@ const Admin=()=>{
     const [menuSelected,setMenuSelected]=useState(2);
 
     return (
-
-
         <>
-
       <Navbar/>
 
       <div className="admin">
@@ -26,19 +23,11 @@ const Admin=()=>{
       <div className="admin_right">
 
         {menuSelected===2 &&<AdminProducts/>}
-
        { menuSelected===3 &&<AddProduct/>}
-
        {menuSelected==4 && <AdminOrder/>}
-
-
       </div>
 
       </div>
-      
-
-
-
         </>
 
 
