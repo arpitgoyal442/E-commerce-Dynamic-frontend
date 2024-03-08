@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import bannerImage from "../../assets/images/banner-image.png"
-import product1 from "../../assets/images/product-item1.jpg"
-import product2 from "../../assets/images/product-item2.jpg"
-import product3 from "../../assets/images/product-item3.jpg"
-import product4 from "../../assets/images/product-item4.jpg"
-
 
 import "../../global.css"
 import "./Banner.css"
+import axios from "axios";
 
+const backendURL=process.env.REACT_APP_BACKEND;
 
 
 function Banner() {
-
 
   const settings = {
     dots: true,
@@ -32,13 +28,45 @@ function Banner() {
     cssEase: "linear"
   };
 
+  const [items, setItems] = useState([]);
+  const fetchProducts = async () => {
+
+    try {
+      let res = await axios.get(`${backendURL}product?page=1`)
+      let items = res.data;
+      setItems(items)
+    } catch (e) {
+      console.log("Error While Fetching Products: ", e);
+      throw new Error(e)
+    }
+
+  }
+  useEffect(() => {
+    fetchProducts();
+  }, [])
+
 
   return (
 
     <div className="banner">
       <div className="slider-container">
         <Slider {...settings}>
-          <div className="single_banner">
+
+
+          {items.map((item) => {
+
+            return  <div className="single_banner">
+              {/* item.product_images[0] */}
+
+            <h1>Awesome Product</h1>
+            <img className="banner_image" src={item.product_images[0]} alt="" />
+
+          </div>
+          })}
+
+
+
+          {/* <div className="single_banner">
 
             <h1>Awesome Product</h1>
             <img className="banner_image" src={bannerImage} alt="" />
@@ -75,7 +103,9 @@ function Banner() {
             <h1>Awesome Product</h1>
             <img className="banner_image" src={bannerImage} alt="" />
 
-          </div>
+          </div> */}
+
+
         </Slider>
       </div></div>
   );

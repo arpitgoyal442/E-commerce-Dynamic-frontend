@@ -17,5 +17,9 @@
     height: auto;
     margin-left: 100px;
     background-color: transparent;
+
+    height: 330px;
+    width: 330px;
+    object-fit: contain;
 }
 

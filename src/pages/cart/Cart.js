@@ -12,6 +12,14 @@ import BannerImage from "../.../../../assets/images/banner-image.png"
 import product2 from "../../assets/images/product-item2.jpg"
 
 import leftArrow from "../../assets/icons/left-arrow.png"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { showErrorNotification } from "../../component/notification/Notification"
+
+
+
+const backendURL=process.env.REACT_APP_BACKEND;
+
 
 
 
@@ -29,11 +37,73 @@ const ProductCartCard=({image,name})=>{
 const Cart=()=>{
 
 
-    return (
+    const [items,SetItems]=useState([]);
+
+    const fetchCartitems=async()=>{
+        try{
+
+            let res=await axios.get(`${backendURL}cart/1`);
+            SetItems(res.data)
+        }catch(e){
+            console.log(e)
+        }
+    }
 
 
-        <>
+    const handleQtyChng=async(item,change)=>{
+
+      try{
+
+        if(item.quantity==1&&change==='minus')
+        return;
+
+        let newQty=item.quantity;
+
+        if(change==='delete')
+        newQty=0;
+
+        else if(change==='plus')
+        newQty+=1;
+
+        else newQty-=1;
+
+
+        let res=await axios.post(`${backendURL}cart/1`,{product_id:item.product_id,quantity:newQty});
+
+        console.log(res)
+
+        if(res.data.rowCount==1)
+           fetchCartitems();
+
+        else showErrorNotification("Some Internal Server Occured, Please try Later")
+
+
         
+      }catch(e){
+
+        console.log(e)
+        showErrorNotification("Some Internal Server Occured, Please try Later")
+
+      }
+
+
+    }
+
+
+
+
+    useEffect(()=>{
+
+        fetchCartitems()
+
+    },[])
+
+
+  
+
+
+    return (
+        <>
         <Navbar/>
 
         <div className="cart">
@@ -44,51 +114,40 @@ const Cart=()=>{
                 <table>
 
                     <tr>
-
-
                     <th>Product</th>
                     <th>Qty.</th>
                     <th>Total Price</th>
                     </tr>
 
-                    <tr>
-                        <td><ProductCartCard image={product2} name="Iphone"/></td>
-                        <td>
-                            <div className="cart_qty">
-                               
-                               <img className="cart_qty_icon" src={MinusIcon} alt="" />
 
-                                2
+                    {items.map((item)=>{
 
-                                <img className="cart_qty_icon" src={AddIcon} alt="" />
 
-                               
+                     return  <tr>
+                     <td><ProductCartCard image={item.product_images[0]} name={item.product_name}/></td>
+                     <td>
+                         <div className="cart_qty">
+                            
+                            <img  onClick={()=>handleQtyChng(item,'minus')} className="cart_qty_icon" src={MinusIcon} alt="" />
 
-                            </div>
-                        </td>
-                        <td>500/-</td>
+                             {item.quantity}
 
-                        <td>  <img className="cart_qty_delete" src={deleteIcon} alt="" /></td>
-                    </tr>
+                             <img onClick={()=>handleQtyChng(item,'plus')} className="cart_qty_icon" src={AddIcon} alt="" />
 
-                    <tr>
-                        <td><ProductCartCard image={BannerImage} name="watch"/></td>
-                        <td>
-                            <div className="cart_qty">
-                               
-                               <img className="cart_qty_icon" src={MinusIcon} alt="" />
+                            
 
-                                3
+                         </div>
+                     </td>
+                     <td>{item.price}</td>
 
-                                <img className="cart_qty_icon" src={AddIcon} alt="" />
+                     <td>  <img onClick={()=>handleQtyChng(item,'delete')} className="cart_qty_delete" src={deleteIcon} alt="" /></td>
+                 </tr>
 
-                               
 
-                            </div>
-                        </td>
-                        <td>500/-</td>
-                        <td>  <img className="cart_qty_delete" src={deleteIcon} alt="" /></td>
-                    </tr>
+
+                    })}
+
+                  
 
 
                     

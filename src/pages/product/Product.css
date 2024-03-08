@@ -63,10 +63,22 @@
     margin-right: 20px;
 }
 
+.buy_btn:hover{
+
+    cursor: pointer;
+}
+
+
+
 .addcart_btn{
     width: fit-content;
-
 }
+
+.addcart_btn:hover{
+    cursor: pointer;
+}
+
+
 
 .buy_add_btns{
 

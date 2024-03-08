@@ -135,6 +135,8 @@ const AddProduct = () => {
 
                     <select name="product_type_id" id="" onChange={(e) => handleCategoryChange(e)}>
 
+                    <option value="0">Select Category</option>
+
                         {categories.map((category) => {
                             return <option value={category.product_type_id}>{category.product_type_name}</option>
 

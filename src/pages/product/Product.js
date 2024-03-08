@@ -11,6 +11,7 @@ import Footer from "../../component/footer/Footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { showErrorNotification, showSuccessNotification } from "../../component/notification/Notification";
 
 const backendURL=process.env.REACT_APP_BACKEND;
 
@@ -19,22 +20,48 @@ const Product=()=>{
    
     const {productId} =useParams();
     const [item,setItem]=useState(null);
-
+    const [attributes,setAttributes]=useState({});
 
     const fetchProduct=async ()=>{
-
-       
         let res=await axios(`${backendURL}product/${productId}`);
         console.log(res.data[0])
+        setAttributes(res.data[0].attributes)
         setItem(res.data[0])
     }
 
     useEffect(()=>{
-
         fetchProduct();
-
     },[])
 
+
+
+    const handleAddToCart=async()=>{
+
+        try{
+
+            let res=await axios.post(`${backendURL}cart/1`,{product_id:productId});
+
+            if(res.data.rowCount==1)
+            showSuccessNotification("Successfully Added To Cart")
+
+            else showErrorNotification("Some Internal Server Occured, Please try Later")
+           
+
+        }catch(e){
+
+
+            console.log(e)
+            showErrorNotification("Some Internal Server Occured, Please try Later")
+
+        }
+
+
+
+    }
+
+    const handleBuyNow=async()=>{
+
+    }
 
     return (
 
@@ -48,13 +75,20 @@ const Product=()=>{
             <h2>{item?.product_name}</h2>
             <h3>${item?.price}</h3>
 
-            <p> <b>Color</b>: Red,Yellow, Black</p>
+            {Object.keys(attributes)?.map((key)=>{
+
+               return  <p><b>{key}</b>: {item?.attributes?.[key]}</p>
+
+            })}
+
+            
+            {/* <p> <b>Color</b>: Red,Yellow, Black</p>
             <p><b>Size</b>: S,M,L</p>
             <p><b>Description: </b> {item?.description}
-        </p>
+        </p> */}
          <div className="buy_add_btns">
-         <p className="secondary-btn buy_btn">Buy Now</p>
-         <p className="primary-btn addcart_btn">Add to cart</p>
+         <p  onClick={handleBuyNow} className="secondary-btn buy_btn">Buy Now</p>
+         <p onClick={handleAddToCart} className="primary-btn addcart_btn">Add to cart</p>
          </div>
 
         </div>
