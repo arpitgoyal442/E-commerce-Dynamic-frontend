@@ -1,0 +1,25 @@
+.banner{
+    width: 100%;
+}
+
+.single_banner{
+
+    display: flex !important;
+    flex-direction: row;
+    height: 380px;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.banner_image{
+    width: 350px;
+    height: auto;
+    margin-left: 100px;
+    background-color: transparent;
+
+    height: 330px;
+    width: 330px;
+    object-fit: contain;
+}
+

@@ -1,0 +1,116 @@
+.product{
+
+    width: 90%;
+
+    height: 800px;
+    /* background-color: red; */
+}
+
+.product img{
+
+    width: 200px;
+    height: 300px;
+    margin: 200px;
+}
+
+.test{
+    margin: 50px;
+}
+
+.product_main{
+
+    /* background-color: aquamarine; */
+    width: 100%;
+
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: row;
+
+    /* align-items: center; */
+
+    height: 500px;
+
+}
+
+.product_main_left{
+
+    margin-left: 20%;
+   
+}
+
+.product_main_right{
+
+    flex: 0.6;
+    padding-left: 50px;
+    font-family: auto;
+    /* background-color: rgb(248, 251, 253) ; */
+    /* background-color: brown;
+     */
+
+     /* border: 1px solid black; */
+}
+
+.secondary-btn{
+    border-color: black;
+}
+.primary-btn{
+    background-color: black;
+}
+.buy_btn{
+
+    width: fit-content;
+    margin-right: 20px;
+}
+
+.buy_btn:hover{
+
+    cursor: pointer;
+}
+
+
+
+.addcart_btn{
+    width: fit-content;
+}
+
+.addcart_btn:hover{
+    cursor: pointer;
+}
+
+
+
+.buy_add_btns{
+
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.product_info_tab{
+
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+
+
+}
+
+.product_info_tab_item{
+
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+.product_info_tab_item:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+
+.product_info_item{
+    width: 70vw;
+    margin-left: 15%;
+    font-family: auto;
+}
