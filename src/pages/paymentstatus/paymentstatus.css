@@ -1,0 +1,8 @@
+.payment_status{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.payment_status_btn:hover{
+    cursor: pointer;
+}

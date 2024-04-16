@@ -72,7 +72,6 @@ const Cart=()=>{
 
         else newQty-=1;
 
-
         let res=await axios.post(`${backendURL}cart/1`,{product_id:item.product_id,quantity:newQty});
 
         console.log(res)
@@ -82,20 +81,13 @@ const Cart=()=>{
 
         else showErrorNotification("Some Internal Server Occured, Please try Later")
 
-
-        
       }catch(e){
 
         console.log(e)
         showErrorNotification("Some Internal Server Occured, Please try Later")
 
       }
-
-
     }
-
-
-
 
     useEffect(()=>{
 
@@ -106,7 +98,7 @@ const Cart=()=>{
 
     const makePayment=async()=>{
 
-        const stripe=await loadStripe("pk_test_51Ns4WFSFwU95K8cxI4UCmqxW1DH5NXWMbB3zPhEvqdAmPVoUC0gRf3mu9qMtwYXWMfGCBT3m0s45sSGwy8JyqsVP00hK5GqHK6")
+        const stripe=await loadStripe(process.env.REACT_APP_STRIPE_KEY)
 
          const response=await axios.post(`${backendURL}payment`,{
         
@@ -179,25 +171,10 @@ const Cart=()=>{
             </div>
 
             <div className="cart_right">
-                <h3 className="subheading">Payment Info.</h3>
-                <div className="payment_method">
-
-                    <p>Payment Info.</p>
-
+                <h3 className="subheading">Delivery Address</h3>
                
-                    <label>
-                        <input
-                        type="radio"
-                        value="cod"
-                        />
-                        COD (Cash on Delivery)
-                    </label>
 
-                  
-
-                </div>
-
-                <div className="payment_details">
+                <div className="address_details">
                      <div className="payment_card">  
                     <input className="" type="text" placeholder="House No./Stret/Area" />
 
