@@ -4,10 +4,10 @@
     margin-top: 150px;
     height: 15vw;
     margin-left: 5vw;
-    /* background-color: aliceblue; */
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 
@@ -30,3 +30,22 @@
     display: inline-block;
     margin-right: 5px;
 }
+
+@media screen and (max-width: 542px) {
+
+    .stats{
+        height: fit-content;
+    }
+
+    .stats_card{
+
+        width: 200px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 10px;
+    }
+   
+   
+   }

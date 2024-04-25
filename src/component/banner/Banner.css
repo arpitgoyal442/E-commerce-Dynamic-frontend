@@ -23,3 +23,19 @@
     object-fit: contain;
 }
 
+@media screen and (max-width: 542px) {
+  
+
+    .banner_image{
+        width: 200px;
+    }
+
+    .single_banner h1{
+
+        margin-left: 20%;
+
+        
+    }
+   
+   }
+
