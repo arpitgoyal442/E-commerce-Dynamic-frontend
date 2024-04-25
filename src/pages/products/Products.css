@@ -36,6 +36,13 @@
     margin-right: 10px;
 }
 
+.product_type_select{
+    padding: 5px;
+    font-size: 14px;
+   
+
+}
+
 
 .products_main_right{
 
@@ -89,10 +96,16 @@
 
 
 
+@media screen and (max-width: 542px) {
 
+    .products_main_right{
 
+        flex: 1;
+    }
 
-
+ 
+   
+   }
 
 
 

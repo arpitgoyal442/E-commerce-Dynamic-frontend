@@ -42,3 +42,30 @@
     margin-bottom: auto;
     margin-left: 20px;
 }
+
+
+@media screen  and (max-width:542px){
+
+    .navbar-mainlogo{
+
+        height: 85px;
+
+    }
+
+    .navbar-option{
+
+        margin: 0px 4px;
+        font-size: 14px; 
+
+    }
+
+    .navbar-icon{
+        width: 25px;
+        height: 25px;
+        margin-right: 12px;
+        /* margin-left: 2px; */
+    }
+
+
+    
+}

@@ -36,7 +36,7 @@ const Products=()=>{
                 <div  className="products_main_left_filter_item">
                     <label htmlFor="">Product Type</label>
                     {/* <input type="text" /> */}
-                    <select name="" id="">
+                    <select className="product_type_select" name="" id="">
 
                         <option value="">Furniture</option>
                         <option value="">Clothes</option>
@@ -46,8 +46,8 @@ const Products=()=>{
 
                 <div className="products_main_left_pricerange products_main_left_filter_item">
                     <label htmlFor="">Price Range</label>
-                    <input type="text" placeholder="Min." />
-                    <input type="text" placeholder="Max" />
+                    <input className="price_range_filter" type="text" placeholder="Min." />
+                    <input className="price_range_filter" type="text" placeholder="Max" />
                 </div>
 
                 <div className="products_main_left_otherfilter products_main_left_filter_item">
